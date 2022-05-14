@@ -1,6 +1,6 @@
 package com.kukki.shraddhapracticaltest
 
-import PostVo
+import com.kukki.shraddhapracticaltest.data.PostVo
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
