@@ -28,3 +28,15 @@ class PostViewModel(private val repository: PostRepository) : ViewModel() {
         repository.insert(post)
     }
 }
+
+
+
+class WordViewModelFactory(private val repository: PostRepository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PostViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return PostViewModel(repository) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}

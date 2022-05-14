@@ -15,6 +15,10 @@ import com.kukki.shraddhapracticaltest.database.PostDatabase
 import com.kukki.shraddhapracticaltest.databinding.ActivityMainBinding
 import com.kukki.shraddhapracticaltest.repo.PostRepository
 import com.kukki.shraddhapracticaltest.repo.PostViewModel
+import com.kukki.shraddhapracticaltest.repo.WordViewModelFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -24,7 +28,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var requestQueue: RequestQueue
 
-    private val postViewModel: PostViewModel by viewModels()
+//    private val postViewModel: PostViewModel by viewModels()
+
+    private val postViewModel: PostViewModel by viewModels {
+        WordViewModelFactory((application as PostApplication).repository)
+    }
+
 
     private var adapter: PostListRecyclerViewAdapter = PostListRecyclerViewAdapter()
     private val postList = ArrayList<PostVo>()
@@ -44,9 +53,9 @@ class MainActivity : AppCompatActivity() {
         //get response from json
         requestQueue = Volley.newRequestQueue(this)
 
-        getData()
+//        getData()
 
-//        fetchFromRoom()
+        fetchFromRoom()
 
         binding.apply {
 
@@ -120,8 +129,9 @@ class MainActivity : AppCompatActivity() {
                     postList.add(postVo)
 
 
-//                    postViewModel.insert(postEntity)
-
+                    GlobalScope.launch(Dispatchers.IO) {
+                        postViewModel.insert(postEntity)
+                    }
                 }
 
                 initList()
@@ -136,6 +146,28 @@ class MainActivity : AppCompatActivity() {
 
         requestQueue.add(jsonArrayRequest)
 
+    }
+
+    private fun fetchFromRoom() {
+        val thread = Thread {
+            val postEntityList: List<PostEntity> = postViewModel.allPosts
+
+            postList.clear()
+
+            for (post in postEntityList) {
+                val postVo = PostVo()
+                postVo.postId = post.postId
+                postVo.id = post.id
+                postVo.name = post.name
+                postVo.email = post.email
+                postVo.body = post.body
+
+                postList.add(postVo)
+            }
+            initList()
+            // refreshing recycler view
+        }
+        thread.start()
     }
 
     private fun initList() {
