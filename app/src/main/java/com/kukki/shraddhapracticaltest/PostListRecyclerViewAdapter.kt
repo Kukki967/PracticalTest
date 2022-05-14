@@ -1,19 +1,30 @@
 package com.kukki.shraddhapracticaltest
 
-import com.kukki.shraddhapracticaltest.data.PostVo
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.kukki.shraddhapracticaltest.data.PostVo
 import com.kukki.shraddhapracticaltest.databinding.ItemListBinding
+import com.kukki.shraddhapracticaltest.swipe.OnSwipeDeleteListener
+import com.kukki.shraddhapracticaltest.swipe.ViewBinderHelper
 
-class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<PostVo, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
+
+class PostListRecyclerViewAdapter() :
+    ListAdapter<PostVo, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
+
+
+    lateinit var onSwipeDeleteListener: OnSwipeDeleteListener
+    private val binderHelper = ViewBinderHelper()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ItemListBinding.inflate(
+            DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
-                parent, false
+                R.layout.item_list, parent, false
             )
         )
     }
@@ -23,7 +34,11 @@ class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Pos
             .let { card ->
                 with(holder) {
                     itemView.tag = card
+
+
                     bind(card)
+
+
                 }
             }
     }
@@ -31,9 +46,9 @@ class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Pos
     class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(card: PostVo) {
-            binding.name.text = card.name
-            binding.email.text = card.email
-            binding.body.text = card.body
+            with(binding) {
+                executePendingBindings()
+            }
         }
     }
 
