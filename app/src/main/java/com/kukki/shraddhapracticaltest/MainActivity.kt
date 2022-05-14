@@ -1,15 +1,20 @@
 package com.kukki.shraddhapracticaltest
 
-import com.kukki.shraddhapracticaltest.data.PostVo
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.kukki.shraddhapracticaltest.data.PostEntity
+import com.kukki.shraddhapracticaltest.data.PostVo
+import com.kukki.shraddhapracticaltest.database.PostDatabase
 import com.kukki.shraddhapracticaltest.databinding.ActivityMainBinding
+import com.kukki.shraddhapracticaltest.repo.PostRepository
+import com.kukki.shraddhapracticaltest.repo.PostViewModel
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -18,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var requestQueue: RequestQueue
+
+    private val postViewModel: PostViewModel by viewModels()
 
     private var adapter: PostListRecyclerViewAdapter = PostListRecyclerViewAdapter()
     private val postList = ArrayList<PostVo>()
@@ -29,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
 
         setContentView(view)
+
         initUiComponent()
     }
 
@@ -37,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         requestQueue = Volley.newRequestQueue(this)
 
         getData()
+
+//        fetchFromRoom()
 
         binding.apply {
 
@@ -105,12 +115,19 @@ class MainActivity : AppCompatActivity() {
                     postVo.email = email
                     postVo.body = body
 
+                    val postEntity = PostEntity(id,postId,name, email, body)
+
                     postList.add(postVo)
+
+
+//                    postViewModel.insert(postEntity)
+
                 }
 
                 initList()
 
             } catch (w: Exception) {
+                println("exception occured")
                 w.printStackTrace()
             }
         }) { error ->

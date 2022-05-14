@@ -1,5 +1,14 @@
+com/kukki/shraddhapracticaltest/dao/PostDao_Impl.java
+ com.kukki.shraddhapracticaltest.dao.PostDao_Impl
+ com.kukki.shraddhapracticaltest.dao.PostDao_Impl$1
+ com.kukki.shraddhapracticaltest.dao.PostDao_Impl$2
+ com.kukki.shraddhapracticaltest.dao.PostDao_Impl$3
+ com.kukki.shraddhapracticaltest.dao.PostDao_Impl$4
 com/kukki/shraddhapracticaltest/databinding/ItemListBinding.java
  com.kukki.shraddhapracticaltest.databinding.ItemListBinding
+com/kukki/shraddhapracticaltest/database/PostDatabase_Impl.java
+ com.kukki.shraddhapracticaltest.database.PostDatabase_Impl
+ com.kukki.shraddhapracticaltest.database.PostDatabase_Impl$1
 com/kukki/shraddhapracticaltest/BuildConfig.java
  com.kukki.shraddhapracticaltest.BuildConfig
 com/kukki/shraddhapracticaltest/databinding/ActivityMainBinding.java
