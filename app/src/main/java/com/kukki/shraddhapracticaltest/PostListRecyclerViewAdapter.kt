@@ -1,30 +1,19 @@
 package com.kukki.shraddhapracticaltest
 
+import com.kukki.shraddhapracticaltest.data.PostVo
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.kukki.shraddhapracticaltest.data.PostVo
 import com.kukki.shraddhapracticaltest.databinding.ItemListBinding
-import com.kukki.shraddhapracticaltest.swipe.OnSwipeDeleteListener
-import com.kukki.shraddhapracticaltest.swipe.ViewBinderHelper
 
-
-class PostListRecyclerViewAdapter() :
-    ListAdapter<PostVo, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
-
-
-    lateinit var onSwipeDeleteListener: OnSwipeDeleteListener
-    private val binderHelper = ViewBinderHelper()
-
+class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<PostVo, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            DataBindingUtil.inflate(
+            ItemListBinding.inflate(
                 LayoutInflater.from(parent.context),
-                R.layout.item_list, parent, false
+                parent, false
             )
         )
     }
@@ -34,11 +23,7 @@ class PostListRecyclerViewAdapter() :
             .let { card ->
                 with(holder) {
                     itemView.tag = card
-
-
                     bind(card)
-
-
                 }
             }
     }
@@ -46,9 +31,9 @@ class PostListRecyclerViewAdapter() :
     class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(card: PostVo) {
-            with(binding) {
-                executePendingBindings()
-            }
+            binding.name.text = card.name
+            binding.email.text = card.email
+            binding.body.text = card.body
         }
     }
 

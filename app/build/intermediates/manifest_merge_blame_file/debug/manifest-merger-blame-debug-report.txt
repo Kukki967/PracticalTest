@@ -34,56 +34,57 @@
 21-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:13:9-54
 22        android:supportsRtl="true"
 22-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:14:9-35
-23        android:theme="@style/Theme.ShraddhaPracticalTest" >
-23-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:15:9-59
-24        <activity
-24-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:16:9-24:20
-25            android:name="com.kukki.shraddhapracticaltest.MainActivity"
-25-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:17:13-41
-26            android:exported="true" >
-26-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:18:13-36
-27            <intent-filter>
-27-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:19:13-23:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:20:17-69
-28-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:20:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:22:17-77
-30-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:22:27-74
-31            </intent-filter>
-32        </activity>
-33
-34        <provider
-34-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-35            android:name="androidx.startup.InitializationProvider"
-35-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-36            android:authorities="com.kukki.shraddhapracticaltest.androidx-startup"
-36-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-37            android:exported="false" >
-37-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-38            <meta-data
-38-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-39                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-39-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-40                android:value="androidx.startup" />
-40-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-41            <meta-data
-41-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-42                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-42-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-43                android:value="androidx.startup" />
-43-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-44        </provider>
-45
-46        <service
-46-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:25:9-28:40
-47            android:name="androidx.room.MultiInstanceInvalidationService"
-47-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:26:13-74
-48            android:directBootAware="true"
-48-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:27:13-43
-49            android:exported="false" />
-49-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:28:13-37
-50    </application>
-51
-52</manifest>
+23        android:testOnly="true"
+24        android:theme="@style/Theme.ShraddhaPracticalTest" >
+24-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:15:9-59
+25        <activity
+25-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:16:9-24:20
+26            android:name="com.kukki.shraddhapracticaltest.MainActivity"
+26-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:17:13-41
+27            android:exported="true" >
+27-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:18:13-36
+28            <intent-filter>
+28-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:19:13-23:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:20:17-69
+29-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:20:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:22:17-77
+31-->/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/AndroidManifest.xml:22:27-74
+32            </intent-filter>
+33        </activity>
+34
+35        <provider
+35-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+36            android:name="androidx.startup.InitializationProvider"
+36-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+37            android:authorities="com.kukki.shraddhapracticaltest.androidx-startup"
+37-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+38            android:exported="false" >
+38-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+39            <meta-data
+39-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+40                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+40-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+41                android:value="androidx.startup" />
+41-->[androidx.emoji2:emoji2:1.0.0] /Users/shraddhatongya/.gradle/caches/transforms-3/0a4ac16da09cdf44d04b867828102589/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+42            <meta-data
+42-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+43                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+43-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+44                android:value="androidx.startup" />
+44-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cdc1265e87ea687c8dd5a1e04782379f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+45        </provider>
+46
+47        <service
+47-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:25:9-28:40
+48            android:name="androidx.room.MultiInstanceInvalidationService"
+48-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:26:13-74
+49            android:directBootAware="true"
+49-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:27:13-43
+50            android:exported="false" />
+50-->[androidx.room:room-runtime:2.4.0] /Users/shraddhatongya/.gradle/caches/transforms-3/cb03539e9dfb51f6124f9cc6b33089a4/transformed/room-runtime-2.4.0/AndroidManifest.xml:28:13-37
+51    </application>
+52
+53</manifest>
