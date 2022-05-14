@@ -1,6 +1,6 @@
 package com.kukki.shraddhapracticaltest
 
-import Post
+import PostVo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var requestQueue: RequestQueue
 
     private var adapter: PostListRecyclerViewAdapter = PostListRecyclerViewAdapter()
-    private val postList = ArrayList<Post>()
+    private val postList = ArrayList<PostVo>()
 
     private var sortedBy: String = "ASCENDING"
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun filter(text: String) {
-        val filteredList: ArrayList<Post> = ArrayList()
+        val filteredList: ArrayList<PostVo> = ArrayList()
 
         for (item in postList) {
             if (item.name.lowercase(Locale.getDefault()).contains(text.lowercase(Locale.getDefault()))) {
@@ -79,11 +79,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        if (filteredList.isEmpty()) {
-            Toast.makeText(this, "Oops !!! \n No data found", Toast.LENGTH_SHORT).show()
-        } else {
-            adapter.submitList(filteredList)
-        }
+        adapter.submitList(filteredList)
+
     }
 
     private fun getData() {
@@ -101,9 +98,14 @@ class MainActivity : AppCompatActivity() {
                     val email = jsonObject.getString("email")
                     val body = jsonObject.getString("body")
 
-                    val post = Post(id, postId, name, email, body)
+                    val postVo = PostVo()
+                    postVo.id = id
+                    postVo.postId = postId
+                    postVo.name = name
+                    postVo.email = email
+                    postVo.body = body
 
-                    postList.add(post)
+                    postList.add(postVo)
                 }
 
                 initList()
@@ -119,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initList() {
+    private fun initList() {
         adapter.submitList(postList)
 
         postList.sortBy {

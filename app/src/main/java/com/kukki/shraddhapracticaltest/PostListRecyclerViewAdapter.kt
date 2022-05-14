@@ -1,13 +1,13 @@
 package com.kukki.shraddhapracticaltest
 
-import Post
+import PostVo
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.kukki.shraddhapracticaltest.databinding.ItemListBinding
 
-class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Post, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
+class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<PostVo, PostListRecyclerViewAdapter.ViewHolder>(ItemCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -30,7 +30,7 @@ class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Pos
 
     class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(card: Post) {
+        fun bind(card: PostVo) {
             binding.name.text = card.name
             binding.email.text = card.email
             binding.body.text = card.body
@@ -38,13 +38,13 @@ class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Pos
     }
 
 
-    private class ItemCallback : DiffUtil.ItemCallback<Post>() {
+    private class ItemCallback : DiffUtil.ItemCallback<PostVo>() {
 
-        override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
+        override fun areItemsTheSame(oldItem: PostVo, newItem: PostVo): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
+        override fun areContentsTheSame(oldItem: PostVo, newItem: PostVo): Boolean {
             return oldItem.id == newItem.id
         }
     }
