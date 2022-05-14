@@ -3,8 +3,8 @@
 
 Load data from url via Volley in recycler view
 
-Search by email , name , id and body text
+Search by name 
 
-Sort by email
+Sort by name
 
 Sample Apk Link : 

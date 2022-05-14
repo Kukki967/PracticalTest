@@ -1,0 +1,6 @@
+com/kukki/shraddhapracticaltest/databinding/ItemListBinding.java
+ com.kukki.shraddhapracticaltest.databinding.ItemListBinding
+com/kukki/shraddhapracticaltest/BuildConfig.java
+ com.kukki.shraddhapracticaltest.BuildConfig
+com/kukki/shraddhapracticaltest/databinding/ActivityMainBinding.java
+ com.kukki.shraddhapracticaltest.databinding.ActivityMainBinding

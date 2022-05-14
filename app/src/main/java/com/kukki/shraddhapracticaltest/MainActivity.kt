@@ -10,6 +10,8 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import com.kukki.shraddhapracticaltest.databinding.ActivityMainBinding
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var adapter: PostListRecyclerViewAdapter = PostListRecyclerViewAdapter()
     private val postList = ArrayList<Post>()
 
+    private var sortedBy: String = "ASCENDING"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -49,43 +52,37 @@ class MainActivity : AppCompatActivity() {
             })
 
             sortButton.setOnClickListener {
-                postList.sortBy {
-                    it.email
+
+                if (sortedBy == "ASCENDING") {
+                    sortedBy = "DESCENDING"
+                    postList.sortByDescending {
+                        it.name
+                    }
+                } else {
+                    sortedBy = "ASCENDING"
+                    postList.sortBy {
+                        it.name
+                    }
                 }
+
             }
         }
 
     }
 
     private fun filter(text: String) {
-        val filteredlist: ArrayList<Post> = ArrayList()
+        val filteredList: ArrayList<Post> = ArrayList()
 
         for (item in postList) {
-            if (item.email.toLowerCase().contains(text.toLowerCase())) {
-                filteredlist.add(item)
-            }
-
-            if (item.body.toLowerCase().contains(text.toLowerCase())) {
-                filteredlist.add(item)
-            }
-
-            if (item.name.toLowerCase().contains(text.toLowerCase())) {
-                filteredlist.add(item)
-            }
-
-            if (item.id == text.toInt()) {
-                filteredlist.add(item)
-            }
-
-            if (item.postId == text.toInt()) {
-                filteredlist.add(item)
+            if (item.name.lowercase(Locale.getDefault()).contains(text.lowercase(Locale.getDefault()))) {
+                filteredList.add(item)
             }
         }
 
-        if (filteredlist.isEmpty()) {
+        if (filteredList.isEmpty()) {
             Toast.makeText(this, "Oops !!! \n No data found", Toast.LENGTH_SHORT).show()
         } else {
-            adapter.submitList(filteredlist)
+            adapter.submitList(filteredList)
         }
     }
 
@@ -93,8 +90,6 @@ class MainActivity : AppCompatActivity() {
         val url = "https://jsonplaceholder.typicode.com/comments"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null, { response ->
-            println("xcxcxcxc success ${response.length()}")
-
             try {
 
                 for (i in 0 until response.length()) {
@@ -111,19 +106,27 @@ class MainActivity : AppCompatActivity() {
                     postList.add(post)
                 }
 
-                adapter.submitList(postList)
-                binding.postsListView.adapter = adapter
+                initList()
 
             } catch (w: Exception) {
                 w.printStackTrace()
             }
         }) { error ->
-            println("xcxcxcxc error ${error.message}")
             Toast.makeText(this, "Oops !!! \n error occured", Toast.LENGTH_SHORT).show()
-
         }
+
         requestQueue.add(jsonArrayRequest)
 
+    }
+
+    fun initList() {
+        adapter.submitList(postList)
+
+        postList.sortBy {
+            it.name
+        }
+
+        binding.postsListView.adapter = adapter
     }
 
 }

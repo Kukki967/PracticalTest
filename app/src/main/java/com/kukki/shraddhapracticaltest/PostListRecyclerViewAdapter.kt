@@ -31,8 +31,9 @@ class PostListRecyclerViewAdapter : androidx.recyclerview.widget.ListAdapter<Pos
     class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(card: Post) {
-            binding.headingText.text = card.email
-            binding.subtitletext.text = card.body
+            binding.name.text = card.name
+            binding.email.text = card.email
+            binding.body.text = card.body
         }
     }
 
