@@ -5,15 +5,14 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import com.kukki.shraddhapracticaltest.data.PostEntity
 import com.kukki.shraddhapracticaltest.data.PostVo
-import com.kukki.shraddhapracticaltest.database.PostDatabase
 import com.kukki.shraddhapracticaltest.databinding.ActivityMainBinding
-import com.kukki.shraddhapracticaltest.repo.PostRepository
 import com.kukki.shraddhapracticaltest.repo.PostViewModel
 import com.kukki.shraddhapracticaltest.repo.WordViewModelFactory
 import kotlinx.coroutines.Dispatchers
@@ -34,14 +33,14 @@ class MainActivity : AppCompatActivity() {
         WordViewModelFactory((application as PostApplication).repository)
     }
 
-
     private var adapter: PostListRecyclerViewAdapter = PostListRecyclerViewAdapter()
-    private val postList = ArrayList<PostVo>()
+    private var postList = ArrayList<PostVo>()
 
     private var sortedBy: String = "ASCENDING"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         val view = binding.root
 
         setContentView(view)
@@ -51,11 +50,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUiComponent() {
         //get response from json
+        GlobalScope.launch(Dispatchers.IO) {
+            postList = postViewModel.getAllPostList()
+
+            if(postList.isNullOrEmpty()) {
+                getData()
+            } else {
+                initList()
+            }
+        }
+
         requestQueue = Volley.newRequestQueue(this)
 
-//        getData()
-
-        fetchFromRoom()
 
         binding.apply {
 
@@ -124,10 +130,9 @@ class MainActivity : AppCompatActivity() {
                     postVo.email = email
                     postVo.body = body
 
-                    val postEntity = PostEntity(id,postId,name, email, body)
+                    val postEntity = PostEntity(id, postId, name, email, body)
 
                     postList.add(postVo)
-
 
                     GlobalScope.launch(Dispatchers.IO) {
                         postViewModel.insert(postEntity)
@@ -148,28 +153,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun fetchFromRoom() {
-        val thread = Thread {
-            val postEntityList: List<PostEntity> = postViewModel.allPosts
-
-            postList.clear()
-
-            for (post in postEntityList) {
-                val postVo = PostVo()
-                postVo.postId = post.postId
-                postVo.id = post.id
-                postVo.name = post.name
-                postVo.email = post.email
-                postVo.body = post.body
-
-                postList.add(postVo)
-            }
-            initList()
-            // refreshing recycler view
-        }
-        thread.start()
-    }
-
     private fun initList() {
         adapter.submitList(postList)
 
@@ -178,6 +161,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.postsListView.adapter = adapter
+
     }
 
 }

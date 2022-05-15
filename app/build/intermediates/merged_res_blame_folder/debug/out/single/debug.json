@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/debug/drawable_ic_linea_basic_trashcan.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/drawable/ic_linea_basic_trashcan.xml"
+    },
+    {
         "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
     },

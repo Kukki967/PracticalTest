@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/drawable_ic_baseline_sort_24.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/drawable/ic_baseline_sort_24.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/layout_item_list.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/layout/item_list.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/generated/res/pngs/release/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/drawable_ic_linea_basic_trashcan.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/drawable/ic_linea_basic_trashcan.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/layout_activity_main.xml.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/merged_res/release/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    }
+]

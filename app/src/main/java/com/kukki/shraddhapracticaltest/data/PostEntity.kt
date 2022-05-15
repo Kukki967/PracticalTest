@@ -10,5 +10,4 @@ data class PostEntity(
     @PrimaryKey var postId: Int,
     @ColumnInfo(name = "name") var name: String,
     var email: String,
-    var body: String
-)
+    var body: String)

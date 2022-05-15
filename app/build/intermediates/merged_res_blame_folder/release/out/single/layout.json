@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/item_list.xml",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/layout/item_list.xml"
+    },
+    {
+        "merged": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/shraddhatongya/Android/Github/android/practicalTest/app/src/main/res/layout/activity_main.xml"
+    }
+]

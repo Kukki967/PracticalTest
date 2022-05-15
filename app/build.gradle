@@ -17,7 +17,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
     buildTypes {
         release {
@@ -43,6 +43,8 @@ dependencies {
     //volley
     implementation("com.android.volley:volley:$rootProject.volleyVersion")
 
+    //swipe to delete
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
 
     // Dependencies for working with Architecture components
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
@@ -51,6 +53,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+//    implementation 'androidx.databinding:databinding-runtime:4.1.3'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
